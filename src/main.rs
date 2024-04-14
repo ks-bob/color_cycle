@@ -98,27 +98,3 @@ fn create_argb_buffer(image: DynamicImage) -> Vec<u32> {
 
     buffer
 }
-
-// fn create_argb_buffer_from_image_buffer<P>(image: ImageBuffer<P, Vec<u8>>) -> Vec<u32>
-// where
-//     P: Pixel<Subpixel = u8>,
-// {
-//     let (width, height) = image.dimensions();
-//     let width = width as usize;
-//     let height = height as usize;
-
-//     let mut buffer: Vec<u32> = vec![0; width * height];
-
-//     for enumerate_pixel in image.enumerate_pixels() {
-//         let x = enumerate_pixel.0 as usize;
-//         let y = enumerate_pixel.1 as usize;
-//         let channels = enumerate_pixel.2.channels();
-//         let red = channels[0] as u32;
-//         let green = channels[1] as u32;
-//         let blue = channels[2] as u32;
-//         let alpha = channels[3] as u32;
-//         buffer[(y * width + x) as usize] = (alpha << 24) | (red << 16) | (green << 8) | blue;
-//     }
-
-//     buffer
-// }
