@@ -7,10 +7,8 @@ use std::time::Duration;
 fn main() {
     let image = Reader::open("./minecraft.jpg").unwrap().decode().unwrap();
     let (width, height) = image.dimensions();
-
     let width = width as usize;
     let height = height as usize;
-
     let mut window = Window::new("Color Cycle", width, height, WindowOptions::default()).unwrap();
 
     // Limit to about 60 FPS.
@@ -23,7 +21,6 @@ fn main() {
         let mut image = image.clone();
         overlay.next_color();
         overlay.apply(&mut image);
-
         let buffer = create_argb_buffer(image);
         window.update_with_buffer(&buffer, width, height).unwrap();
     }
