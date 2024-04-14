@@ -16,6 +16,7 @@ fn main() {
     // Limit to about 60 FPS.
     window.limit_update_rate(Some(Duration::from_micros(16600)));
 
+    // Create an object to keep track of the overlay state.
     let mut overlay = Overlay::new(50);
 
     while window.is_open() && !window.is_key_down(Key::Escape) {
