@@ -78,7 +78,7 @@ impl Overlay {
     }
 }
 
-/// Converts RGBA buffer read by the reader to an ARGB buffer as expected by minifb.
+/// Converts RGBA buffer to an ARGB buffer as expected by minifb.
 fn create_argb_buffer(image: DynamicImage) -> Vec<u32> {
     let (width, height) = image.dimensions();
     let width = width as usize;
