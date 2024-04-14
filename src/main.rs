@@ -29,6 +29,7 @@ fn main() {
     }
 }
 
+/// Handles smooth RGBA overlay state and application.
 struct Overlay {
     alpha: u8,
     cycle_position: f64,
