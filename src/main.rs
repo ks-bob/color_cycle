@@ -92,7 +92,7 @@ fn create_argb_buffer(image: DynamicImage) -> Vec<u32> {
             let green = channels[1] as u32;
             let blue = channels[2] as u32;
             let alpha = channels[3] as u32;
-            buffer[(y * width + x) as usize] = (alpha << 24) | (red << 16) | (green << 8) | blue;
+            buffer[y * width + x] = (alpha << 24) | (red << 16) | (green << 8) | blue;
         }
     }
 
