@@ -36,6 +36,7 @@ struct Overlay {
 
 impl Overlay {
     const MAX_COLOR: f64 = 255.0;
+    const CYCLE_INCREMENT: f64 = 0.2;
 
     fn new(alpha: u8) -> Self {
         Self {
@@ -60,7 +61,7 @@ impl Overlay {
 
     /// Advance the cycle position to the next color.
     fn next_color(&mut self) {
-        self.cycle_position += 0.1;
+        self.cycle_position += Self::CYCLE_INCREMENT;
 
         if self.cycle_position >= 2.0 * PI {
             self.cycle_position -= 2.0 * PI;
